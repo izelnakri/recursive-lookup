@@ -1,15 +1,15 @@
 {
   "name": "recursive-lookup",
+  "version": "0.0.3",
+  "description": "Dependency-free and fast async recursive fs lookups in node.js",
+  "type": "module",
   "author": "Izel Nakri",
-  "version": "0.0.1",
-  "description": "Dependecy-free and fast async recursive fs lookups in node.js",
+  "license": "MIT",
   "main": "index.js",
   "files": [
     "index.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
