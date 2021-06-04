@@ -1,6 +1,6 @@
 {
   "name": "recursive-lookup",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Dependency-free and fast async recursive fs lookups in node.js",
   "type": "module",
   "author": "Izel Nakri",
