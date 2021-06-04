@@ -13,17 +13,16 @@ async function iterToArray(asyncIter, result = []) {
   return result;
 }
 
-async function* getFiles(dir, filter = (path) => true) {
-  // NOTE: search the diff between, path.resolve, fs.stat
+async function* getFiles(dir, filter) {
   const dirents = await fs.readdir(dir, { withFileTypes: true });
   for (const dirent of dirents) {
     const res = path.resolve(dir, dirent.name);
-    if ((await fs.stat(res)).isDirectory()) {
-      yield* getFiles(res);
-    } else {
-      if (filter(dirent.name)) {
+    if (path.extname(res) !== '') {
+      if (!filter || filter(dirent.name)) {
         yield res;
       }
+    } else if ((await fs.stat(res)).isDirectory()) {
+      yield* getFiles(res, filter);
     }
   }
 }
