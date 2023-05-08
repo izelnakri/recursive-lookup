@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import path from 'path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
 export default async function recursiveLookup(folderPath, filter) {
   return await iterToArray(await getFiles(folderPath, filter));
